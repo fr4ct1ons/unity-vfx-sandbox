@@ -77,7 +77,14 @@ public class LiquidPlaneCutoff : MonoBehaviour
         
         plane = new Plane(transform.up, transform.position);
         planeVector.Set(plane.normal.x, plane.normal.y, plane.normal.z, plane.distance);
-        target?.material.SetVector("_Plane", planeVector);
+        if (Application.isPlaying)
+        {
+            target.material.SetVector("_Plane", planeVector);
+        }
+        else
+        {
+            target.sharedMaterial.SetVector("_Plane", planeVector);
+        }
         
     }
 
