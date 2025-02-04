@@ -94,6 +94,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
+    - _CurrentMovement: 0
     - _Cutoff: 0.5
     - _CutoffDistance: 0.04
     - _CutoffMultiplier: 30
@@ -102,33 +103,41 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _FresnelMax: 0.724
+    - _FresnelMin: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _InvertNoise: 0
     - _Metallic: 0
     - _Mode: 0
+    - _MovementSensitivity: 0.05
+    - _NoiseScale: 15
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ParallaxAmplitude: 1200
+    - _ParallaxAmplitude: 600
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SplashStrength: 2
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _TotalMovement: 335
     - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5943396, g: 0.17661978, b: 0.34992906, a: 1}
+    - _BaseColor: {r: 0.3018868, g: 0.13812746, b: 0.17041038, a: 1}
     - _Color: {r: 0.90693045, g: 0.16913247, b: 0.47378498, a: 1}
-    - _Emission: {r: 23.96863, g: 3.1159973, b: 0, a: 1}
+    - _Emission: {r: 47.93726, g: 6.2319946, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Plane: {r: 0, g: 1, b: 0, a: -1.696575}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Plane: {r: 0, g: 1, b: 0, a: -1.6659663}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1495229598300564686
 MonoBehaviour:

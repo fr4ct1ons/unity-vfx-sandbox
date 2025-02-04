@@ -27,6 +27,9 @@ public class LiquidPlaneCutoff : MonoBehaviour
     private float bottom, top;
     [SerializeField] private float accumulatedRootRotation;
     private float previousRootRotation;
+    private float totalMovement = 0f;
+    
+    private Material material => Application.isPlaying ? target.material : target.sharedMaterial;
     
     private void Awake()
     {
@@ -42,6 +45,7 @@ public class LiquidPlaneCutoff : MonoBehaviour
         {
             var current = Mathf.Abs(targetRoot.eulerAngles.x + targetRoot.eulerAngles.y + targetRoot.eulerAngles.z);
             accumulatedRootRotation += current - previousRootRotation;
+            totalMovement += current - previousRootRotation;
             previousRootRotation = current;
             
             accumulatedRootRotation = Mathf.Clamp(accumulatedRootRotation, 0f, maxAccumulation);
@@ -73,18 +77,14 @@ public class LiquidPlaneCutoff : MonoBehaviour
 
             accumulatedRootRotation -= Time.deltaTime;
             accumulatedRootRotation = Mathf.Clamp(accumulatedRootRotation, 0f, maxAccumulation);
+            material.SetFloat("_TotalMovement", totalMovement);
+            material.SetFloat("_CurrentMovement", accumulatedRootRotation);
         }
         
         plane = new Plane(transform.up, transform.position);
         planeVector.Set(plane.normal.x, plane.normal.y, plane.normal.z, plane.distance);
-        if (Application.isPlaying)
-        {
-            target.material.SetVector("_Plane", planeVector);
-        }
-        else
-        {
-            target.sharedMaterial.SetVector("_Plane", planeVector);
-        }
+        
+        material.SetVector("_Plane", planeVector);
         
     }
 
