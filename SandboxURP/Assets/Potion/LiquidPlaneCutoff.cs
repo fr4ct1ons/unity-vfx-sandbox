@@ -43,9 +43,11 @@ public class LiquidPlaneCutoff : MonoBehaviour
     {
         if (simulatePhysics)
         {
-            var current = Mathf.Abs(targetRoot.eulerAngles.x + targetRoot.eulerAngles.y + targetRoot.eulerAngles.z);
-            accumulatedRootRotation += current - previousRootRotation;
-            totalMovement += current - previousRootRotation;
+            var current = Mathf.Abs(targetRoot.localEulerAngles.x)
+                          + Mathf.Abs(targetRoot.localEulerAngles.y)
+                          + Mathf.Abs(targetRoot.localEulerAngles.z);
+            accumulatedRootRotation += Mathf.Abs(current - previousRootRotation);
+            totalMovement += Mathf.Abs(current - previousRootRotation);
             previousRootRotation = current;
             
             accumulatedRootRotation = Mathf.Clamp(accumulatedRootRotation, 0f, maxAccumulation);
@@ -70,7 +72,9 @@ public class LiquidPlaneCutoff : MonoBehaviour
             if (Application.isPlaying)
             {
                 transform.eulerAngles = transform.eulerAngles + new Vector3(
-                        Mathf.PerlinNoise(25f + totalTime, 86 + totalTime), 0f,
+                        Mathf.PerlinNoise(25f + totalTime, 86 + totalTime) * sensitivity *
+                        (accumulatedRootRotation / maxAccumulation), 
+                        0f,
                         Mathf.PerlinNoise(14f - totalTime, 55 - totalTime)) * sensitivity *
                     (accumulatedRootRotation / maxAccumulation);
             }
@@ -92,6 +96,11 @@ public class LiquidPlaneCutoff : MonoBehaviour
     {
         //Gizmos.DrawWireMesh(previewPlane, transform.position, transform.rotation);
         //Gizmos.DrawCube(transform.position, transform.lossyScale);
+    }
+
+    public void SetFulness(float value)
+    {
+        fulness = Mathf.Clamp(value, 0f, 1f);
     }
 }
 

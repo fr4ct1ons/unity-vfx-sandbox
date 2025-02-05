@@ -111,7 +111,7 @@ Material:
     - _InvertNoise: 0
     - _Metallic: 0
     - _Mode: 0
-    - _MovementSensitivity: 0.05
+    - _MovementSensitivity: 0.02
     - _NoiseScale: 15
     - _OcclusionStrength: 1
     - _Parallax: 0.02
