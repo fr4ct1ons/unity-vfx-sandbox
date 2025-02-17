@@ -39,7 +39,7 @@ public class LiquidPlaneCutoff : MonoBehaviour
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (simulatePhysics)
         {

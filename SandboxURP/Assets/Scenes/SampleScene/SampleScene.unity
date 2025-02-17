@@ -150,8 +150,8 @@ Transform:
   m_GameObject: {fileID: 48188}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 4, z: 25}
+  m_LocalPosition: {x: 12, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 6, z: 25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1616601159}
@@ -335,13 +335,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27563733, y: 0, z: 0, w: 0.96126175}
-  m_LocalPosition: {x: 0, y: 2.3, z: -1.08}
+  m_LocalRotation: {x: 0.20791169, y: 0, z: 0, w: 0.9781476}
+  m_LocalPosition: {x: 0, y: 2, z: -0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1827032318}
-  m_LocalEulerAnglesHint: {x: 32, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 24, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,7 +793,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3202987916032762290}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1194197532
+--- !u!95 &1194197532
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264801814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28e3e1ff202114429826848524441666, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1194197533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -802,10 +823,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 264801814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a62b478551f43ebaf80c994172ded6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fa98a2b062284b678678a0f3abbd3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 90
+  anim: {fileID: 0}
+  triggerName: Play
 --- !u!1 &1268735614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,14 +1024,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827032317}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.13547437, z: -0, w: 0.9907809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 15.572, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1854093239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2859995998562791206, guid: ca9ef99d7522c6249a8f6b7335e064b4,
@@ -1043,8 +1065,8 @@ Transform:
   m_GameObject: {fileID: 1907618128}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 12}
-  m_LocalScale: {x: 25, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: 3, z: 12}
+  m_LocalScale: {x: 25, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1616601159}
@@ -1378,7 +1400,7 @@ PrefabInstance:
     - target: {fileID: 7191201983578002842, guid: 853706a90e8f0405aacb946cc6ad8b2b,
         type: 3}
       propertyPath: facingUp
-      value: 0.7071068
+      value: -0.18649192
       objectReference: {fileID: 0}
     - target: {fileID: 7191201983578002842, guid: 853706a90e8f0405aacb946cc6ad8b2b,
         type: 3}
@@ -1403,6 +1425,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1194197532}
+    - targetCorrespondingSourceObject: {fileID: 2405218954235955841, guid: 853706a90e8f0405aacb946cc6ad8b2b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1194197533}
   m_SourcePrefab: {fileID: 100100000, guid: 853706a90e8f0405aacb946cc6ad8b2b, type: 3}
 --- !u!33 &4873618504929298207
 MeshFilter:

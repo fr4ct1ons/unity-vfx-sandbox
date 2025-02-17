@@ -94,7 +94,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
-    - _CurrentMovement: 0
+    - _CurrentMovement: 1.8466667
     - _Cutoff: 0.5
     - _CutoffDistance: 0.04
     - _CutoffMultiplier: 30
